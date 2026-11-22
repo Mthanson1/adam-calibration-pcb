@@ -764,6 +764,14 @@
     [
       "497716de-db90-4a3b-9d88-e1f7aa55daaf",
       "LoadCell"
+    ],
+    [
+      "a2bb9de8-355f-4428-883e-89526087279b",
+      "CH0"
+    ],
+    [
+      "7dc98108-e875-4a59-b811-5fd1ae1dd155",
+      "CH1"
     ]
   ],
   "text_variables": {},
