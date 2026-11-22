@@ -694,7 +694,13 @@
       "sort_asc": true,
       "sort_field": "Reference"
     },
-    "bus_aliases": {},
+    "bus_aliases": {
+      "SPI": [
+        "CIPO",
+        "COPI",
+        "SCLK"
+      ]
+    },
     "connection_grid_size": 50.0,
     "drawing": {
       "dashed_lines_dash_length_ratio": 12.0,
@@ -754,6 +760,10 @@
     [
       "44598c79-64db-4eb8-9614-9ca380e5937f",
       "Power"
+    ],
+    [
+      "497716de-db90-4a3b-9d88-e1f7aa55daaf",
+      "LoadCell"
     ]
   ],
   "text_variables": {},
