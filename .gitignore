@@ -1,0 +1,30 @@
+# KiCad backups and autosaves
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.bak
+*.bck
+_autosave-*
+\#auto_saved_files#
+*.tmp
+*~
+
+# KiCad 10 local history (contains its own nested git repo)
+.history/
+
+# Lock files (exist while a file is open)
+~*.lck
+*.lck
+
+# Per-user UI state (open layers, zoom, etc.)
+*.kicad_prl
+
+# Caches
+fp-info-cache
+
+# Fab outputs (regenerate them, or remove these lines if you want them versioned)
+gerbers/
+fab/
+*.zip
+# ...but keep the Fabrication Toolkit gerber zip
+!production/*.zip
