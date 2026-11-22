@@ -12,6 +12,9 @@ _autosave-*
 # KiCad 10 local history (contains its own nested git repo)
 .history/
 
+# Editor settings
+.vscode/
+
 # Lock files (exist while a file is open)
 ~*.lck
 *.lck
