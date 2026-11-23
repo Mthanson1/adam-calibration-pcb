@@ -3872,7 +3872,7 @@
 				)
 			)
 		)
-		(property "Value" "${Rs}"
+		(property "Value" "@{round(${Rs}/1000,1)}k"
 			(at 130.81 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4347,7 +4347,7 @@
 				)
 			)
 		)
-		(property "Value" "${Rs}"
+		(property "Value" "@{round(${Rs}/1000,1)}k"
 			(at 130.81 88.9 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4764,7 +4764,7 @@
 				)
 			)
 		)
-		(property "Value" "${Rs}"
+		(property "Value" "@{round(${Rs}/1000,1)}k"
 			(at 130.81 35.56 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6291,7 +6291,7 @@
 				)
 			)
 		)
-		(property "Value" "${Rs}"
+		(property "Value" "@{round(${Rs}/1000,1)}k"
 			(at 130.81 76.2 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6746,16 +6746,16 @@
 			)
 		)
 		(pin "2"
-			(uuid "aabf5c52-75a4-40ff-9dd3-c38af71372a7")
+			(uuid "aabf5c52-75a4-40ff-9dd3-c38af71372a8")
 		)
 		(pin "1"
-			(uuid "e73199b4-5176-48ca-b322-3a0c841a7b96")
+			(uuid "e73199b4-5176-48ca-b322-3a0c841a7b97")
 		)
 		(pin "5"
 			(uuid "626fa58b-e923-4b60-a12c-3f344b9cbaf9")
 		)
 		(pin "6"
-			(uuid "959ab110-ad24-45e0-857c-8ce8c5a82726")
+			(uuid "959ab110-ad24-45e0-857c-8ce8c5a82727")
 		)
 		(pin "4"
 			(uuid "28f21abd-9f0e-4540-a3c8-865d406ee642")
@@ -7071,22 +7071,22 @@
 			)
 		)
 		(pin "2"
-			(uuid "aabf5c52-75a4-40ff-9dd3-c38af71372a7")
+			(uuid "aabf5c52-75a4-40ff-9dd3-c38af71372a9")
 		)
 		(pin "1"
-			(uuid "e73199b4-5176-48ca-b322-3a0c841a7b96")
+			(uuid "e73199b4-5176-48ca-b322-3a0c841a7b98")
 		)
 		(pin "5"
-			(uuid "a12c4c55-7dea-49e4-b5e5-7c6a28db6b09")
+			(uuid "a12c4c55-7dea-49e4-b5e5-7c6a28db6b0b")
 		)
 		(pin "6"
-			(uuid "959ab110-ad24-45e0-857c-8ce8c5a82726")
+			(uuid "959ab110-ad24-45e0-857c-8ce8c5a82728")
 		)
 		(pin "4"
-			(uuid "469b16b0-2e34-49f5-9a2e-665d346157dd")
+			(uuid "469b16b0-2e34-49f5-9a2e-665d346157df")
 		)
 		(pin "3"
-			(uuid "18c3d678-f3b2-4c74-8444-5d17950ca25c")
+			(uuid "18c3d678-f3b2-4c74-8444-5d17950ca25e")
 		)
 		(instances
 			(project "Adam_Calibration"

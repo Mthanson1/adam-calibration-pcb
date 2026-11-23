@@ -1023,10 +1023,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Diode:SMAJ33A"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Diode:SMAJ33CA"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -1046,7 +1043,7 @@
 					)
 				)
 			)
-			(property "Value" "SMAJ33A"
+			(property "Value" "SMAJ33CA"
 				(at 0 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1068,17 +1065,6 @@
 				)
 			)
 			(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
-				(at -1.27 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "400W unidirectional Transient Voltage Suppressor, 33.0Vr, SMA(DO-214AC)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1089,7 +1075,18 @@
 					)
 				)
 			)
-			(property "ki_keywords" "unidirectional diode TVS voltage suppressor"
+			(property "Description" "400W bidirectional Transient Voltage Suppressor, 33.0Vr, SMA(DO-214AC)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "bidirectional diode TVS voltage suppressor"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1111,13 +1108,13 @@
 					)
 				)
 			)
-			(symbol "SMAJ33A_0_1"
+			(symbol "SMAJ33CA_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy -1.27 1.27) (xy -1.27 -1.27)
+						(xy -2.54 -1.27) (xy 0 0) (xy -2.54 1.27) (xy -2.54 -1.27)
 					)
 					(stroke
-						(width 0.254)
+						(width 0.2032)
 						(type default)
 					)
 					(fill
@@ -1126,10 +1123,34 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+						(xy 0.508 1.27) (xy 0 1.27) (xy 0 -1.27) (xy -0.508 -1.27)
 					)
 					(stroke
-						(width 0.254)
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy 2.54 -1.27) (xy 0 0) (xy 2.54 1.27)
+					)
+					(stroke
+						(width 0.2032)
 						(type default)
 					)
 					(fill
@@ -1137,7 +1158,7 @@
 					)
 				)
 			)
-			(symbol "SMAJ33A_1_1"
+			(symbol "SMAJ33CA_1_1"
 				(pin passive line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -3108,7 +3129,7 @@
 	)
 	(rectangle
 		(start 110.49 60.96)
-		(end 147.32 91.44)
+		(end 147.32 99.06)
 		(stroke
 			(width 0)
 			(type dash_dot)
@@ -3144,7 +3165,7 @@
 	)
 	(rectangle
 		(start 161.29 15.24)
-		(end 281.94 58.42)
+		(end 281.94 102.87)
 		(stroke
 			(width 0)
 			(type dash_dot)
@@ -3168,7 +3189,7 @@
 	)
 	(text "POWER GOOD LED"
 		(exclude_from_sim no)
-		(at 146.05 90.17 0)
+		(at 146.05 97.79 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3191,6 +3212,16 @@
 			(justify left)
 		)
 		(uuid "1d9a0e5c-39fd-441a-8608-c9fad3261046")
+	)
+	(text "YELLOW\n(Vf=2 V)"
+		(exclude_from_sim no)
+		(at 135.89 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "319cfd36-d001-4b0d-91ed-ce1e9e9dca82")
 	)
 	(text "5V SUPPLY BUCK"
 		(exclude_from_sim no)
@@ -3230,6 +3261,16 @@
 		)
 		(uuid "7f05ca59-157a-4751-9ff1-88df117147f3")
 	)
+	(text "GREEN\n(Vf=3.1 V)"
+		(exclude_from_sim no)
+		(at 120.65 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9cef44bc-ab94-4cff-8af5-1f9da239ce2d")
+	)
 	(text_box "PROGRAMABLE REF.:\nV_KA (MAX)= 37 V\nI_KA (CONT., MAX) = -100 TO 150 mA\nV_REF (NOM.) = 2.495 V (2.44-2.55 V)\nI_REF = 2-4 uA\nI_MIN = 0.4-1 uA\n|Zka| = 0.2-0.5 Ohm"
 		(exclude_from_sim no)
 		(at 187.96 19.3439 0)
@@ -3250,7 +3291,7 @@
 		)
 		(uuid "02d96ff7-47ce-48a0-9cf2-a9061ede8932")
 	)
-	(text_box "Q1 REV. POLARITY PMOS:\nV_DS (MAX) = -60V\nV_GS (MAX) = ±20V\nPOWER DISSIPATION (T_A=25C) = 1 W\nPOWER DISSIPATION (T_A=70C) = 670 mW\n|V_TH| = 1-3 V\nR_DS(ON) (@ V_GS=10 V) = 285-345 mΩ\n|I_DSS| = 1-10 uA\nI_S = -1.4 A\nV_SD = -0.8 TO -1.2V"
+	(text_box "REV. POLARITY PMOS:\nV_DS (MAX) = -60V\nV_GS (MAX) = ±20V\nPOWER DISSIPATION (T_A=25C) = 1 W\nPOWER DISSIPATION (T_A=70C) = 670 mW\n|V_TH| = 1-3 V\nR_DS(ON) (@ V_GS=10 V) = 285-345 mΩ\n|I_DSS| = 1-10 uA\nI_S = -1.4 A\nV_SD = -0.8 TO -1.2V"
 		(exclude_from_sim no)
 		(at 19.05 113.54 0)
 		(size 44.45 22.35)
@@ -3312,7 +3353,7 @@
 		)
 		(uuid "5e4dc319-aec8-458f-9fa7-51d9b40f3976")
 	)
-	(text_box "REGULATED VOLTAGE\n(FOR DIODE CLAMP):\nV = V_REF*(1+R6/R7) = @{round(2.495*(1+${/01121b40-7bd0-4bf5-ba88-6000dd309313/44598c79-64db-4eb8-9614-9ca380e5937f/5727be04-d55f-4c60-b16e-d0e0e3fae9aa:VALUE}/${/01121b40-7bd0-4bf5-ba88-6000dd309313/44598c79-64db-4eb8-9614-9ca380e5937f/0cd987fa-987b-4900-adbb-78c790df7c5a:VALUE}),4)} V\nLDO_MAX (±2% TOL.) = @{round(1.02*3.3,3)} V \n\nPLACE REGULATOR NEAR LDO OUTPUT.\n\nC_OUT (ON +3V3) = 6.21 uF"
+	(text_box "REGULATED VOLTAGE\n(FOR DIODE CLAMP):\nV = V_REF*(1+R7/R8) = @{round(2.495*(1+${/01121b40-7bd0-4bf5-ba88-6000dd309313/44598c79-64db-4eb8-9614-9ca380e5937f/5727be04-d55f-4c60-b16e-d0e0e3fae9aa:VALUE}/${/01121b40-7bd0-4bf5-ba88-6000dd309313/44598c79-64db-4eb8-9614-9ca380e5937f/0cd987fa-987b-4900-adbb-78c790df7c5a:VALUE}),4)} V\nLDO_MAX (±2% TOL.) = @{round(1.02*3.3,3)} V \n\nPLACE REGULATOR NEAR LDO OUTPUT.\n\nC_OUT (ON +3V3) = 6.21 uF"
 		(exclude_from_sim no)
 		(at 187.96 37.1092 0)
 		(size 36.83 20.3053)
@@ -3391,6 +3432,26 @@
 			(justify left top)
 		)
 		(uuid "afae96fd-f84f-4aed-9628-cf48fa5bd070")
+	)
+	(text_box "TL431 CLAMP SINK BUDGET (WORST CASE, ALL FAULTS AT ONCE)\nFAULT: +24 V SHORTED ONTO EVERY CLAMPED INPUT\nVf = 0.60 V (LOW-END EST., ~1 mA, HOT → CONSERVATIVE FOR I_FAULT)\nV_CLAMP(MIN) = V_SHUNT(MIN) + Vf = 3.42 + 0.60 = 4.02 V\n\nPROX CH0/CH1 (R_TOP @{${R_TOP}/1000}k / R_BOT @{${R_BOT}/1000}k + Rs @{${Rs}/1000}k):\n  V_TH = 24 × R_BOT/(R_TOP+R_BOT) = @{round(24*${R_BOT}/(${R_TOP}+${R_BOT}),2)} V\n  R_TH + Rs = @{round((${R_TOP}*${R_BOT}/(${R_TOP}+${R_BOT})+${Rs})/1000,2)} kΩ\n  I = (V_TH − 4.02)/(R_TH + Rs) = @{round(max(0,(24*${R_BOT}/(${R_TOP}+${R_BOT})-4.02)/(${R_TOP}*${R_BOT}/(${R_TOP}+${R_BOT})+${Rs}))*1000,2)} mA EACH\nUART TX/RX (R_IO = 4.7k, CONNECTOR SIDE OF CLAMP):\n  I = (24 − 4.02)/4.7k = 4.25 mA EACH → 8.5 mA\n  P(R_IO) = 85 mW EACH => 0805 MIN.\nZ_PROBE / OUT_0: 2N7002 OPEN-DRAIN NOT CLAMPED = 0 mA\nLOAD CELL: NOT CLAMPED = 0 mA\n------------------------------------------------\nI_FAULT(MAX) = @{round(2*max(0,(24*${R_BOT}/(${R_TOP}+${R_BOT})-4.02)/(${R_TOP}*${R_BOT}/(${R_TOP}+${R_BOT})+${Rs}))*1000+8.5,1)} mA   (TL431 I_KA(MAX) = 100 mA)\nP_TL431 = 3.58 V × I_FAULT = @{round(3.58*(2*max(0,(24*${R_BOT}/(${R_TOP}+${R_BOT})-4.02)/(${R_TOP}*${R_BOT}/(${R_TOP}+${R_BOT})+${Rs}))*1000+8.5),0)} mW\nV_NODE(MAX) = 3.58 + 1.0 (Vf MAX @ 10 mA) = 4.58 V\n3V3 LOAD ABSORBS FAULT CURRENT FIRST; TL431 ONLY\nCONDUCTS WHEN I_FAULT > I_LOAD (E.G. MCU IN RESET)"
+		(exclude_from_sim no)
+		(at 162.56 58.8038 0)
+		(size 77.47 42.7962)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "dabb1b34-f67f-4938-b499-18e19b6f8167")
 	)
 	(junction
 		(at 175.26 29.21)
@@ -6951,6 +7012,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:SMAJ33CA")
+		(at 58.42 87.63 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3d0685c8-a725-4642-b915-56e617974a17")
+		(property "Reference" "D15"
+			(at 52.07 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SMAJ33CA"
+			(at 54.61 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 63.5 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
+			(at 58.42 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "400W bidirectional Transient Voltage Suppressor, 33.0Vr, SMA(DO-214AC)"
+			(at 58.42 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "26a4d805-6d06-41f2-ac37-eb93fbdde80e")
+		)
+		(pin "1"
+			(uuid "a1d1e518-23aa-45ed-b4c4-7a767d918c00")
+		)
+		(instances
+			(project "Adam_Calibration"
+				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/44598c79-64db-4eb8-9614-9ca380e5937f"
+					(reference "D15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 115.57 80.01 0)
 		(unit 1)
@@ -7650,98 +7793,6 @@
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/44598c79-64db-4eb8-9614-9ca380e5937f"
 					(reference "#PWR011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:SMAJ33A")
-		(at 58.42 87.63 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "51a4cfc0-2bba-4c99-ad1e-a31c27ca7566")
-		(property "Reference" "D1"
-			(at 55.626 84.328 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SMAJ33A"
-			(at 53.086 84.328 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 53.34 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
-			(at 58.42 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "400W unidirectional Transient Voltage Suppressor, 33.0Vr, SMA(DO-214AC)"
-			(at 58.42 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C113966"
-			(at 58.42 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "bc94a3d6-c7fa-4917-8702-c4d54f4fbeb3")
-		)
-		(pin "1"
-			(uuid "9ea648df-4656-47a7-b521-abcfb613b9a1")
-		)
-		(instances
-			(project "Adam_Calibration"
-				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/44598c79-64db-4eb8-9614-9ca380e5937f"
-					(reference "D1")
 					(unit 1)
 				)
 			)

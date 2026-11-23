@@ -301,6 +301,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 22.86) (xy 53.34 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22776e73-f9fc-4a96-a87f-a6e055d7fd75")
+	)
+	(wire
+		(pts
 			(xy 78.74 27.94) (xy 90.17 27.94)
 		)
 		(stroke
@@ -318,16 +328,6 @@
 			(type default)
 		)
 		(uuid "3d696d0a-2ee2-4b4d-b339-2692aa4c80b2")
-	)
-	(wire
-		(pts
-			(xy 38.1 22.86) (xy 53.34 22.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4957301b-3979-4f4b-899d-6eb088a7b8d8")
 	)
 	(wire
 		(pts
@@ -388,16 +388,6 @@
 			(type default)
 		)
 		(uuid "9750fb8f-dc61-4b39-8d22-4b54568a7d34")
-	)
-	(wire
-		(pts
-			(xy 38.1 25.4) (xy 53.34 25.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "985544d3-3adf-4d97-b278-2da584f8fa28")
 	)
 	(bus
 		(pts
@@ -468,6 +458,16 @@
 			(type default)
 		)
 		(uuid "ebda33c4-7f61-48a6-af6e-62d808742125")
+	)
+	(wire
+		(pts
+			(xy 38.1 25.4) (xy 53.34 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec34e90a-0282-4571-8ad0-0c53ad47de1a")
 	)
 	(wire
 		(pts
@@ -1141,17 +1141,7 @@
 				(justify left top)
 			)
 		)
-		(pin "LED0" input
-			(at 38.1 29.21 0)
-			(uuid "8755893e-9795-4e1b-886b-b2a90d42c807")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "USART1_RX" input
+		(pin "USART1_RX" output
 			(at 38.1 22.86 0)
 			(uuid "d287e456-c235-4b55-8a82-1b7dc1ee7cd5")
 			(effects
@@ -1161,7 +1151,7 @@
 				(justify right)
 			)
 		)
-		(pin "USART1_TX" output
+		(pin "USART1_TX" input
 			(at 38.1 25.4 0)
 			(uuid "3f639baa-ceaf-4e64-ae2e-2567f2615bf4")
 			(effects
@@ -1171,9 +1161,19 @@
 				(justify right)
 			)
 		)
+		(pin "~{OUT0}" input
+			(at 38.1 29.21 0)
+			(uuid "b36b020a-d372-4edf-b53d-79acb21db853")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(pin "~{Z_CONTACT}" input
 			(at 38.1 31.75 0)
-			(uuid "22984d48-3a21-4199-a06e-653c1318a436")
+			(uuid "e574aefd-97c8-469f-91fe-9bbd53623376")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1237,18 +1237,8 @@
 				(justify right)
 			)
 		)
-		(pin "LED0" output
-			(at 53.34 29.21 180)
-			(uuid "630c3aff-6745-4dab-96d4-3400446d7db4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "USART1_RX" input
-			(at 53.34 25.4 180)
+			(at 53.34 22.86 180)
 			(uuid "69226be6-b3da-46ca-bf51-0a70f7b43f78")
 			(effects
 				(font
@@ -1258,7 +1248,7 @@
 			)
 		)
 		(pin "USART1_TX" output
-			(at 53.34 22.86 180)
+			(at 53.34 25.4 180)
 			(uuid "6503920c-c7f8-428f-9979-27ccaa78baf9")
 			(effects
 				(font
@@ -1307,9 +1297,19 @@
 				(justify right)
 			)
 		)
+		(pin "~{OUT0}" output
+			(at 53.34 29.21 180)
+			(uuid "1f572454-b0f7-451b-b49a-7fb9774013ed")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "~{Z_CONTACT}" output
 			(at 53.34 31.75 180)
-			(uuid "07212eaf-932a-4d5e-a9cc-53eeb9f4da62")
+			(uuid "cb8b3209-c533-4529-bfcd-e07371ea03e5")
 			(effects
 				(font
 					(size 1.27 1.27)
