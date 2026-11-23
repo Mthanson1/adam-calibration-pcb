@@ -4,6 +4,15 @@
 	(generator_version "10.0")
 	(uuid "b2e65441-8171-4d38-bcc9-522baa482b5d")
 	(paper "A4")
+	(title_block
+		(title "ADAM Calibration Board")
+		(date "2026-11-23")
+		(rev "${REV}")
+		(company "UW Mechatronics - ADAM Capstone")
+		(comment 1 "Author: ${AUTHOR}")
+		(comment 2 "Reviewed by:")
+		(comment 3 "Notes:")
+	)
 	(lib_symbols
 		(symbol "Analog_ADC:ADS1220xPW"
 			(exclude_from_sim no)
@@ -1566,7 +1575,7 @@
 	)
 	(rectangle
 		(start 13.97 76.2)
-		(end 49.53 97.79)
+		(end 49.53 101.6)
 		(stroke
 			(width 0)
 			(type dash_dot)
@@ -1601,8 +1610,8 @@
 		(uuid "87c7a435-1f00-490d-bd20-b3fcfcfc8f91")
 	)
 	(rectangle
-		(start 177.8 15.24)
-		(end 281.94 57.15)
+		(start 182.88 15.24)
+		(end 279.4 54.61)
 		(stroke
 			(width 0)
 			(type dash_dot)
@@ -1626,7 +1635,7 @@
 	)
 	(rectangle
 		(start 106.68 15.24)
-		(end 175.26 60.96)
+		(end 180.34 60.96)
 		(stroke
 			(width 0)
 			(type dash_dot)
@@ -1673,7 +1682,7 @@
 	)
 	(text "4-WIRE LOAD CELL CONNECTOR"
 		(exclude_from_sim no)
-		(at 31.75 96.52 0)
+		(at 31.75 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1730,10 +1739,10 @@
 		)
 		(uuid "d8d28789-f8b1-40d7-ba68-4cf184ed061d")
 	)
-	(text_box "5V RAIL RIPPLE: ~9 mV pk-pk\nRC CORNER: f_c = 1/(2π*10Ω*10UF) ≈ 1.6 kHz\nAT 400 kHz THIS IS ROUGHLY 250x ABOVE CORNER, \nFOR FIRST-ORDER FALL-OFF OF 20 dB/DECADE GIVES\n48 dB ATTENUTATION.\n\n4-9 mV IN => 15-40 uV pk-pk ON +5VA\n\nMOSTLY CANCELED BY RATIOMETRIC LOAD CELL, REST IS\nREJECTED BY ADS1220. AT 400 kHz AND 256 kHz MODULATOR\nTHIS ALIASES TO AROUND 112-144 kHz FAR ABOVE DATA RATE\nAND FILTERED BY SINC. \n\nONLY 15TH HARMONIC (6.4 MHz) IS INTEGER MULTIPLE (25x) \nOF MODULATOR FREQ AND NEGLIGABLE ENERGY IS LEFT AT THIS\nFREQUENCY."
+	(text_box "5V RAIL RIPPLE: ~9 mV pk-pk\nRC CORNER: f_c = 1/(2π*10Ω*10UF) ≈ 1.6 kHz\nAT 400 kHz THIS IS ROUGHLY 250x ABOVE CORNER, \nFOR FIRST-ORDER FALL-OFF OF 20 dB/DECADE GIVES\n48 dB ATTENUTATION.\n\n4-9 mV IN => 15-40 uV pk-pk ON +5VA\n\nMOSTLY CANCELED BY RATIOMETRIC LOAD CELL, REST IS\nREJECTED BY ADC. AT 400 kHz AND 256 kHz MODULATOR\nALIASES TO AROUND 112-144 kHz, FAR ABOVE DATA RATE\nAND FILTERED BY SINC. \n\nONLY 15TH HARMONIC (6.4 MHz) IS INTEGER MULTIPLE (25x) \nOF MODULATOR FREQ."
 		(exclude_from_sim no)
-		(at 215.9 20.32 0)
-		(size 64.77 34.9518)
+		(at 213.36 20.32 0)
+		(size 64.77 32.5731)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -1751,9 +1760,9 @@
 		)
 		(uuid "41ee7dcc-a9de-458e-8a4b-018cc085a710")
 	)
-	(text_box "Rs = @{${Rs}/1000} kΩ 0.1%\nCdiff = @{${Cdiff}*10^6} nF\nCcm = @{${Ccm}*10^6} nF, C0G, 1-2%\n\nDIFF. CORNER = 1/(2π*2Rs*Cdiff) = 795 Hz\nCM CORNER = 15.9 kHz (~20x DIFF. CORNER)\n\nDESIGNED TO HANDLE ANTI-ALIASING AROUND\nADS1220 MODULATOR FREQ AND BLOCK RF FROM\nCABLE. @ ~800 Hz THE DIFF. CORNER GIVES \n~50 dB ATTEN. \n\n"
+	(text_box "Rs = @{${Rs}/1000} kΩ 0.1%\nCdiff = @{${Cdiff}*10^9} nF\nCcm = @{${Ccm}*10^9} nF, C0G, 1-2%\n\nDIFF. CORNER = 1/(2π*2Rs*Cdiff) = @{round(1/(2*${PI}*2*${Rs}*${Cdiff}),0)} Hz\nCM CORNER = @{round(1/(2*${PI}*${Rs}*${Ccm})/1000,1)} kHz (~20x DIFF. CORNER)\n\nDESIGNED TO HANDLE ANTI-ALIASING AROUND\nADS1220 MODULATOR FREQ AND BLOCK RF FROM\nCABLE. THE DIFF. CORNER GIVES ~50 dB ATTEN.\n@ 256 kHz MODULATOR"
 		(exclude_from_sim no)
-		(at 143.51 22.5323 0)
+		(at 147.32 22.5323 0)
 		(size 30.48 34.6177)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -1777,6 +1786,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2a6d978a-1541-4d8d-b522-b3a275655783")
+	)
+	(junction
+		(at 24.13 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "34db123e-9b6f-47cc-be91-4cb0840396cb")
 	)
 	(junction
 		(at 93.98 66.04)
@@ -1809,13 +1824,13 @@
 		(uuid "9b1cc908-4f4e-4a09-8b10-09a886b04cfb")
 	)
 	(junction
-		(at 194.31 38.1)
+		(at 199.39 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b3a48d4a-b305-402b-ad46-3fa93f553f4a")
 	)
 	(junction
-		(at 201.93 38.1)
+		(at 207.01 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bff1ae1a-8c44-4fed-8223-a74c28d528e7")
@@ -1895,7 +1910,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 38.1) (xy 182.88 38.1)
+			(xy 186.69 31.75) (xy 187.96 31.75)
 		)
 		(stroke
 			(width 0)
@@ -1925,7 +1940,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 31.75) (xy 120.65 31.75)
+			(xy 109.22 31.75) (xy 120.65 31.75)
 		)
 		(stroke
 			(width 0)
@@ -1955,7 +1970,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 44.45) (xy 120.65 44.45)
+			(xy 109.22 44.45) (xy 120.65 44.45)
 		)
 		(stroke
 			(width 0)
@@ -1965,7 +1980,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 38.1) (xy 194.31 38.1)
+			(xy 195.58 31.75) (xy 199.39 31.75)
 		)
 		(stroke
 			(width 0)
@@ -1975,7 +1990,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 41.91) (xy 41.91 41.91)
+			(xy 20.32 41.91) (xy 24.13 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2025,7 +2040,7 @@
 	)
 	(wire
 		(pts
-			(xy 21.59 88.9) (xy 21.59 87.63)
+			(xy 21.59 92.71) (xy 21.59 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2075,7 +2090,7 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 82.55) (xy 22.86 82.55)
+			(xy 15.24 86.36) (xy 22.86 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2095,7 +2110,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 46.99) (xy 194.31 48.26)
+			(xy 199.39 40.64) (xy 199.39 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2205,7 +2220,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 31.75) (xy 142.24 31.75)
+			(xy 133.35 31.75) (xy 143.51 31.75)
 		)
 		(stroke
 			(width 0)
@@ -2215,13 +2230,13 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 80.01) (xy 22.86 80.01)
+			(xy 24.13 41.91) (xy 41.91 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8047a212-c0f6-4245-ad40-9e05b9258778")
+		(uuid "7eee1d1c-6844-4e81-a37a-bae53b78d526")
 	)
 	(wire
 		(pts
@@ -2265,7 +2280,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 38.1) (xy 194.31 39.37)
+			(xy 199.39 31.75) (xy 199.39 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2275,7 +2290,7 @@
 	)
 	(wire
 		(pts
-			(xy 21.59 87.63) (xy 22.86 87.63)
+			(xy 21.59 91.44) (xy 22.86 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2315,7 +2330,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 44.45) (xy 142.24 44.45)
+			(xy 133.35 44.45) (xy 143.51 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2335,7 +2350,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 44.45) (xy 83.82 44.45)
+			(xy 77.47 44.45) (xy 100.33 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2365,7 +2380,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 36.83) (xy 201.93 38.1)
+			(xy 207.01 30.48) (xy 207.01 31.75)
 		)
 		(stroke
 			(width 0)
@@ -2385,13 +2400,23 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 38.1) (xy 203.2 38.1)
+			(xy 199.39 31.75) (xy 207.01 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c13718fe-f64b-44fd-abe3-1ed917019546")
+	)
+	(wire
+		(pts
+			(xy 21.59 82.55) (xy 21.59 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c22ad48d-cca7-4ec5-80bd-c7cdc0afbbc3")
 	)
 	(wire
 		(pts
@@ -2402,6 +2427,16 @@
 			(type default)
 		)
 		(uuid "c274301d-62be-4ae0-87d9-b8dd2755ebed")
+	)
+	(wire
+		(pts
+			(xy 21.59 83.82) (xy 22.86 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4ada54f-6ad4-4034-a62f-145f29f802f1")
 	)
 	(wire
 		(pts
@@ -2445,7 +2480,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 39.37) (xy 83.82 39.37)
+			(xy 77.47 39.37) (xy 100.33 39.37)
 		)
 		(stroke
 			(width 0)
@@ -2505,7 +2540,17 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 85.09) (xy 22.86 85.09)
+			(xy 24.13 40.64) (xy 24.13 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e77ab197-7e5b-4822-9926-085ab6a49bd3")
+	)
+	(wire
+		(pts
+			(xy 15.24 88.9) (xy 22.86 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2555,7 +2600,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 36.83) (xy 181.61 38.1)
+			(xy 186.69 30.48) (xy 186.69 31.75)
 		)
 		(stroke
 			(width 0)
@@ -2563,8 +2608,8 @@
 		)
 		(uuid "ffcbb38b-ea73-4d86-b437-0bcec5ab1a59")
 	)
-	(label "AIN2"
-		(at 83.82 44.45 180)
+	(label "LOAD-"
+		(at 100.33 44.45 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2573,8 +2618,8 @@
 		)
 		(uuid "052e90d8-f23b-4609-aa5e-e79b4eef9a1f")
 	)
-	(label "AIN2"
-		(at 113.03 44.45 0)
+	(label "LOAD-"
+		(at 109.22 44.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2594,8 +2639,8 @@
 		)
 		(uuid "3eb2759f-1328-4443-a4d5-7e62617a387b")
 	)
-	(label "AIN1"
-		(at 83.82 39.37 180)
+	(label "LOAD+"
+		(at 100.33 39.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2614,8 +2659,8 @@
 		)
 		(uuid "991c828f-491b-43f7-98a7-fc22ed46f8fd")
 	)
-	(label "AIN1"
-		(at 113.03 31.75 0)
+	(label "LOAD+"
+		(at 109.22 31.75 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2636,7 +2681,7 @@
 		(uuid "d2dfa19f-0c03-4c74-b798-7b2d53f08132")
 	)
 	(label "SENSE-"
-		(at 15.24 85.09 0)
+		(at 15.24 88.9 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2646,7 +2691,7 @@
 		(uuid "d32a0890-5e40-4fd2-9829-957399769b8b")
 	)
 	(label "SENSE-"
-		(at 142.24 44.45 180)
+		(at 143.51 44.45 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2656,7 +2701,7 @@
 		(uuid "e20b8478-ec24-4bca-b5e9-a7a80c7e0f8f")
 	)
 	(label "SENSE+"
-		(at 142.24 31.75 180)
+		(at 143.51 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2665,18 +2710,8 @@
 		)
 		(uuid "e2b6d86c-cff7-4bcd-ad66-d68947f269c2")
 	)
-	(label "5V_FILT"
-		(at 15.24 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fea1bc10-0120-4dfb-b8cb-b560e740563d")
-	)
 	(label "SENSE+"
-		(at 15.24 82.55 0)
+		(at 15.24 86.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2696,7 +2731,7 @@
 		)
 		(uuid "5bf35810-85e9-4173-8c54-a30a0fd462d7")
 	)
-	(hierarchical_label "!DRDY"
+	(hierarchical_label "~{DRDY}"
 		(shape output)
 		(at 35.56 46.99 180)
 		(effects
@@ -2707,9 +2742,9 @@
 		)
 		(uuid "653a66eb-4463-4e8e-b5ad-5b6fabf36f93")
 	)
-	(hierarchical_label "!CS"
+	(hierarchical_label "~{CS}"
 		(shape input)
-		(at 35.56 41.91 180)
+		(at 20.32 41.91 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2718,10 +2753,149 @@
 		)
 		(uuid "dfc6de83-5e3d-40d8-a117-8143cc6973b5")
 	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 134.62 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "07bbd069-ae76-4011-91e9-374622e0c7f8")
+		(property "Netclass" "Analog_Diff"
+			(at 135.3185 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 100.33 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 81.28 39.37 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "92118756-4282-4334-908d-b57d53ff13ce")
+		(property "Netclass" "Analog_Diff"
+			(at 81.9785 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 46.99 -22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 81.28 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ba3092ec-0119-4055-8c4a-6cd1926978fe")
+		(property "Netclass" "Analog_Diff"
+			(at 81.9785 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 46.99 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 134.62 31.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c16d7ed3-02f5-48be-a93b-19b9addda396")
+		(property "Netclass" "Analog_Diff"
+			(at 135.3185 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 100.33 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
-		(at 186.69 38.1 90)
-		(mirror x)
+		(at 191.77 31.75 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2730,8 +2904,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "01dd8f16-d69c-4655-a77e-17c2f6804335")
-		(property "Reference" "R30"
-			(at 186.69 44.45 90)
+		(property "Reference" "R12"
+			(at 191.77 25.4 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2741,7 +2915,7 @@
 			)
 		)
 		(property "Value" "10"
-			(at 186.69 41.91 90)
+			(at 191.77 27.94 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2751,7 +2925,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 186.69 36.322 90)
+			(at 191.77 33.528 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2762,7 +2936,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 186.69 38.1 0)
+			(at 191.77 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2773,7 +2947,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 186.69 38.1 0)
+			(at 191.77 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2784,7 +2958,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 186.69 38.1 90)
+			(at 191.77 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2803,7 +2977,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "R30")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -2811,7 +2985,7 @@
 	)
 	(symbol
 		(lib_id "power:+5VA")
-		(at 201.93 36.83 0)
+		(at 207.01 30.48 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2820,8 +2994,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1784abe5-dcbb-41bf-9e84-4f18953b493d")
-		(property "Reference" "#PWR070"
-			(at 201.93 40.64 0)
+		(property "Reference" "#PWR041"
+			(at 207.01 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2832,7 +3006,7 @@
 			)
 		)
 		(property "Value" "+5VA"
-			(at 201.93 33.02 0)
+			(at 207.01 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2842,7 +3016,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 201.93 36.83 0)
+			(at 207.01 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2853,7 +3027,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 201.93 36.83 0)
+			(at 207.01 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2864,7 +3038,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5VA\""
-			(at 201.93 36.83 0)
+			(at 207.01 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2880,7 +3054,84 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR070")
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 24.13 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2dca20b8-b917-493f-bb54-1b4ebbb0cece")
+		(property "Reference" "#PWR030"
+			(at 24.13 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 24.13 29.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 24.13 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 24.13 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 24.13 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1fafd525-1c26-4272-89a5-d155719a4075")
+		)
+		(instances
+			(project "Adam_Calibration"
+				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -2897,7 +3148,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3239d2e1-8543-4e21-a68d-716676e7f176")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR035"
 			(at 93.98 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -2957,7 +3208,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR041")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -2975,7 +3226,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "397aa44d-a662-4593-b2e2-d30b4e6de169")
-		(property "Reference" "C18"
+		(property "Reference" "C8"
 			(at 83.82 59.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3050,15 +3301,15 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "C18")
+					(reference "C8")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 181.61 36.83 0)
+		(lib_id "Device:R")
+		(at 24.13 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3066,30 +3317,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "47c3425f-becd-496a-939c-924bc7bdbe2e")
-		(property "Reference" "#PWR058"
-			(at 181.61 40.64 0)
-			(hide yes)
+		(uuid "43aa50e2-d10c-486a-9a69-5685c2c89e01")
+		(property "Reference" "R9"
+			(at 21.59 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" "+5V"
-			(at 181.61 33.274 0)
+		(property "Value" "10k"
+			(at 21.59 38.0999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 181.61 36.83 0)
+			(at 22.352 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3100,7 +3352,87 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 181.61 36.83 0)
+			(at 24.13 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 24.13 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "84cd28a7-ade2-4490-baff-e28475283f09")
+		)
+		(pin "1"
+			(uuid "df2ccdbd-f626-4cf4-845e-65e07c6d23bd")
+		)
+		(instances
+			(project "Adam_Calibration"
+				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 186.69 30.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "47c3425f-becd-496a-939c-924bc7bdbe2e")
+		(property "Reference" "#PWR039"
+			(at 186.69 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 186.69 26.924 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3111,7 +3443,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 181.61 36.83 0)
+			(at 186.69 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3127,7 +3459,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR058")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -3144,7 +3476,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "597cc034-9a33-40e0-9a95-d77b40aeac17")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR026"
 			(at 17.78 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -3204,7 +3536,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR08")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -3221,7 +3553,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6632c206-ce80-41b1-98ee-0af601215fb3")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR037"
 			(at 120.65 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -3281,7 +3613,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR054")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -3299,7 +3631,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7a373d98-3fde-4169-b352-abc5e31fc2a3")
-		(property "Reference" "U3"
+		(property "Reference" "U4"
 			(at 54.356 27.686 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3417,7 +3749,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "U3")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -3435,7 +3767,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "85db208e-9928-476d-a875-0849a8281248")
-		(property "Reference" "C19"
+		(property "Reference" "C9"
 			(at 96.52 59.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3510,7 +3842,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "C19")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -3527,7 +3859,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "87397123-b38e-4d59-a53f-90a7e2e0e847")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR033"
 			(at 69.85 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -3587,7 +3919,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR026")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -3604,7 +3936,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8fbd010d-2870-47d4-b083-d1ab27eedb1a")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR038"
 			(at 125.73 29.21 0)
 			(hide yes)
 			(show_name no)
@@ -3664,7 +3996,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR057")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -3682,7 +4014,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "95daa7c5-5804-4224-9128-b4030046edbd")
-		(property "Reference" "C29"
+		(property "Reference" "C11"
 			(at 116.84 48.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3693,7 +4025,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "${Ccm}"
+		(property "Value" "@{${Ccm}*10^9}nF"
 			(at 116.84 50.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3746,7 +4078,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "C29")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -3763,7 +4095,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "99d25a40-307c-429c-8ddc-7a1cdce58984")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR031"
 			(at 48.26 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -3823,7 +4155,84 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR023")
+					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5VA")
+		(at 21.59 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9e4b50b5-7845-4099-a625-c837c0edd0d1")
+		(property "Reference" "#PWR028"
+			(at 21.59 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5VA"
+			(at 21.59 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 21.59 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 21.59 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 21.59 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "73841618-70a2-45bd-997f-34b57c3cbf39")
+		)
+		(instances
+			(project "Adam_Calibration"
+				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -3840,7 +4249,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a08f2deb-ca06-4458-9a4b-9da5840205ef")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR027"
 			(at 17.78 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -3900,7 +4309,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR09")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -3918,7 +4327,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a704b4c5-0d35-41f1-ab5b-6da38276f581")
-		(property "Reference" "C22"
+		(property "Reference" "C10"
 			(at 116.84 25.3999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3929,7 +4338,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "${Ccm}"
+		(property "Value" "@{${Ccm}*10^9}nF"
 			(at 116.84 27.9399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3982,7 +4391,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "C22")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -3990,7 +4399,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 27.94 82.55 0)
+		(at 27.94 86.36 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4000,8 +4409,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b12c8653-edb8-4dd0-a3cd-9200e06dc7ec")
-		(property "Reference" "J1"
-			(at 30.48 82.5499 0)
+		(property "Reference" "J2"
+			(at 30.48 86.3599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4012,7 +4421,7 @@
 			)
 		)
 		(property "Value" "22-27-2041"
-			(at 30.48 85.0899 0)
+			(at 30.48 88.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4023,7 +4432,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 82.55 0)
+			(at 27.94 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4034,7 +4443,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 82.55 0)
+			(at 27.94 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4045,7 +4454,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 27.94 82.55 0)
+			(at 27.94 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4070,7 +4479,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "J1")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -4078,7 +4487,8 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 194.31 43.18 0)
+		(at 199.39 36.83 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4086,10 +4496,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "b38201c4-2962-42e6-976c-3a3ca2d4cea5")
-		(property "Reference" "C31"
-			(at 198.12 41.9099 0)
+		(property "Reference" "C13"
+			(at 195.58 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4100,7 +4509,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 198.12 44.4499 0)
+			(at 195.58 38.0999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4111,7 +4520,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 195.2752 46.99 0)
+			(at 198.4248 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4122,7 +4531,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 43.18 0)
+			(at 199.39 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4133,7 +4542,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 194.31 43.18 0)
+			(at 199.39 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4144,7 +4553,7 @@
 			)
 		)
 		(property "LCSC" "C1713"
-			(at 194.31 43.18 0)
+			(at 199.39 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4163,7 +4572,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "C31")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -4171,7 +4580,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 194.31 48.26 0)
+		(at 199.39 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4180,8 +4589,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b69c8376-e7e7-4358-8a7c-8ffe73fac35a")
-		(property "Reference" "#PWR066"
-			(at 194.31 54.61 0)
+		(property "Reference" "#PWR040"
+			(at 199.39 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4192,7 +4601,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 194.31 52.07 0)
+			(at 199.39 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4202,7 +4611,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 194.31 48.26 0)
+			(at 199.39 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4213,7 +4622,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 48.26 0)
+			(at 199.39 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4224,7 +4633,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 194.31 48.26 0)
+			(at 199.39 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4240,7 +4649,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR066")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -4258,7 +4667,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ba192912-be55-4184-b208-74165d681a6b")
-		(property "Reference" "C14"
+		(property "Reference" "C7"
 			(at 21.59 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4333,7 +4742,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "C14")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -4350,7 +4759,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bb3ae7f9-a91b-431d-9cc3-9ffad02cf514")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR032"
 			(at 55.88 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -4410,7 +4819,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR024")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -4428,7 +4837,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cf51aa89-99ed-484c-9927-5f19ab76509f")
-		(property "Reference" "R29"
+		(property "Reference" "R11"
 			(at 129.54 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4490,7 +4899,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "R29")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -4508,7 +4917,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d160947b-1877-4336-a0e0-f33a528bd91f")
-		(property "Reference" "R4"
+		(property "Reference" "R10"
 			(at 129.54 38.1 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4570,7 +4979,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "R4")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -4588,7 +4997,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dae212ed-bd15-4212-a610-e93a56d6a763")
-		(property "Reference" "C30"
+		(property "Reference" "C12"
 			(at 119.38 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4599,7 +5008,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "@{${Cdiff}}"
+		(property "Value" "@{${Cdiff}*10^9}nF"
 			(at 119.38 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4652,7 +5061,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "C30")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -4660,7 +5069,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 21.59 88.9 0)
+		(at 21.59 92.71 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4669,8 +5078,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dbf06453-7406-47ab-9478-7854d6825287")
-		(property "Reference" "#PWR017"
-			(at 21.59 95.25 0)
+		(property "Reference" "#PWR029"
+			(at 21.59 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4681,7 +5090,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 21.59 92.71 0)
+			(at 21.59 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4691,7 +5100,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 21.59 88.9 0)
+			(at 21.59 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4702,7 +5111,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 21.59 88.9 0)
+			(at 21.59 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4713,7 +5122,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 21.59 88.9 0)
+			(at 21.59 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4729,7 +5138,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR017")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -4746,7 +5155,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e4387ab9-467b-4407-b327-acfcff4376da")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR034"
 			(at 71.12 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -4806,7 +5215,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR040")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -4814,7 +5223,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 203.2 38.1 270)
+		(at 207.01 31.75 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4823,8 +5232,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e7b7fb6a-e86c-4fda-a2e0-dd38cbd29519")
-		(property "Reference" "#FLG03"
-			(at 205.105 38.1 0)
+		(property "Reference" "#FLG05"
+			(at 207.01 33.655 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4835,7 +5244,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 205.232 36.322 90)
+			(at 212.09 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4846,7 +5255,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 203.2 38.1 0)
+			(at 207.01 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4857,7 +5266,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.2 38.1 0)
+			(at 207.01 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4868,7 +5277,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 203.2 38.1 0)
+			(at 207.01 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4884,7 +5293,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#FLG03")
+					(reference "#FLG05")
 					(unit 1)
 				)
 			)
@@ -4901,7 +5310,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ee11c54e-e48c-41e7-8b48-3cdb03d471ae")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR036"
 			(at 93.98 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -4961,7 +5370,7 @@
 		(instances
 			(project "Adam_Calibration"
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/497716de-db90-4a3b-9d88-e1f7aa55daaf"
-					(reference "#PWR053")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)

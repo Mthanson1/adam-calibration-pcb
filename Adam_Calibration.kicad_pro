@@ -257,7 +257,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "${REV}"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -531,10 +531,18 @@
         "wire_width": 6
       },
       {
+        "line_style": 1,
+        "name": "Analog_Diff",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgb(152, 57, 255)",
+        "tuning_profile": ""
+      },
+      {
         "clearance": 0.4,
         "name": "Power",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
+        "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.4,
         "tuning_profile": ""
@@ -544,7 +552,44 @@
       "version": 5
     },
     "net_colors": {},
-    "netclass_assignments": {},
+    "netclass_assignments": {
+      "/CH0/V_SENSE+": [
+        "Analog_Diff"
+      ],
+      "/CH0/V_SENSE-": [
+        "Analog_Diff"
+      ],
+      "/CH1/V_SENSE+": [
+        "Analog_Diff"
+      ],
+      "/CH1/V_SENSE-": [
+        "Analog_Diff"
+      ],
+      "/LoadCell_ADC/LOAD+": [
+        "Analog_Diff"
+      ],
+      "/LoadCell_ADC/LOAD-": [
+        "Analog_Diff"
+      ],
+      "/LoadCell_ADC/SENSE+": [
+        "Analog_Diff"
+      ],
+      "/LoadCell_ADC/SENSE-": [
+        "Analog_Diff"
+      ],
+      "/Prox_ADC/CH0+": [
+        "Analog_Diff"
+      ],
+      "/Prox_ADC/CH0-": [
+        "Analog_Diff"
+      ],
+      "/Prox_ADC/CH1+": [
+        "Analog_Diff"
+      ],
+      "/Prox_ADC/CH1-": [
+        "Analog_Diff"
+      ]
+    },
     "netclass_patterns": [
       {
         "netclass": "Power",
@@ -749,7 +794,7 @@
         "uuid": "01121b40-7bd0-4bf5-ba88-6000dd309313"
       }
     ],
-    "used_designators": "#FLG1-7,#PWR1-83,C1-31,D1-19,F1-5,H1-4,J1-8,JP1-2,L1,Q1,R1-30,U1-5,ZD1",
+    "used_designators": "#FLG1-7,#PWR1-88,C1-37,D1-19,F1-5,H1-4,J1-10,JP1-2,L1,NT1-2,Q1,R1-34,U1-6,ZD1",
     "variants": []
   },
   "sheets": [
@@ -787,10 +832,12 @@
     ]
   ],
   "text_variables": {
-    "Ccm": "0.000010",
-    "Cdiff": "0.000100",
+    "AUTHOR": "Mathew Hanson",
+    "Ccm": "0.000000010",
+    "Cdiff": "0.000000100",
+    "PI": "3.14159265",
+    "REV": "V2.0",
     "R_BOT": "3000",
-    "R_SENSE": "240",
     "R_TOP": "4700",
     "Rs": "1000"
   },
