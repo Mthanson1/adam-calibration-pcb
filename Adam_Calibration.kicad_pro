@@ -749,7 +749,7 @@
         "uuid": "01121b40-7bd0-4bf5-ba88-6000dd309313"
       }
     ],
-    "used_designators": "#FLG1-6,#PWR1-71,C1-24,D1-19,F1-3,H1-4,J1-8,JP1-2,L1,Q1,R1-30,U1-4,ZD1",
+    "used_designators": "#FLG1-7,#PWR1-83,C1-31,D1-19,F1-5,H1-4,J1-8,JP1-2,L1,Q1,R1-30,U1-5,ZD1",
     "variants": []
   },
   "sheets": [
@@ -763,7 +763,7 @@
     ],
     [
       "497716de-db90-4a3b-9d88-e1f7aa55daaf",
-      "LoadCell"
+      "LoadCell_ADC"
     ],
     [
       "a2bb9de8-355f-4428-883e-89526087279b",
@@ -776,12 +776,23 @@
     [
       "2d1d8fff-0e62-42db-b464-31b1db9db8df",
       "MCU"
+    ],
+    [
+      "e8c1a979-8704-4849-b025-3a5c92eab79e",
+      "Prox_ADC"
+    ],
+    [
+      "0ee76a58-5905-43e9-a43a-ac7fd6e43632",
+      "UART_Probe"
     ]
   ],
   "text_variables": {
+    "Ccm": "0.000010",
+    "Cdiff": "0.000100",
     "R_BOT": "3000",
-    "R_SENSE": "412",
-    "R_TOP": "4700"
+    "R_SENSE": "240",
+    "R_TOP": "4700",
+    "Rs": "1000"
   },
   "tuning_profiles": {
     "meta": {

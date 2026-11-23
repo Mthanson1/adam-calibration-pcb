@@ -1406,7 +1406,7 @@
 	)
 	(rectangle
 		(start 16.51 48.26)
-		(end 81.28 86.36)
+		(end 82.55 86.36)
 		(stroke
 			(width 0)
 			(type dash_dot)
@@ -1430,10 +1430,10 @@
 	)
 	(rectangle
 		(start 16.51 13.97)
-		(end 71.12 46.99)
+		(end 72.39 46.99)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(fill
 			(type none)
@@ -1466,9 +1466,9 @@
 		)
 		(uuid "190160c2-168a-482d-b15b-5e25bda0c967")
 	)
-	(text "I_IN: 4-20 mA\nV_CONV (NOM.): @{round(4m*${R_SENSE},3)}-@{round(20m*${R_SENSE},3)} V\nP_MAX (±5%): @{round(1.05*${R_SENSE}*20m,3)} W\nP_MAX (±1%): @{round(1.01*${R_SENSE}*20m,3)} W\n"
+	(text "I_IN: 4-20 mA\nV_CONV (NOM.): @{round(4m*${R_SENSE},3)}-@{round(20m*${R_SENSE},3)} V\nP_MAX (±5%): @{round(1.05*${R_SENSE}*20m^2,4)} W\nV_MAX (±5%): @{round(20m*1.05*${R_SENSE},3)} V\nP_MAX (±1%): @{round(1.01*${R_SENSE}*20m^2,4)} W\nV_MAX (±1%): @{round(20m*1.01*${R_SENSE},3)} V\n"
 		(exclude_from_sim no)
-		(at 39.37 40.64 0)
+		(at 39.37 39.37 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1523,7 +1523,7 @@
 		)
 		(uuid "425d26c7-5d5f-4172-8253-ae08d9621511")
 	)
-	(text_box "INDUCTIVE PROXIMITY SENSOR\nP/N: DW-AS-509-M12-309\nNOMINAL DIST.: 0-6 mm\nRESPONSE TIME: 1 ms\nIDLE CURRENT (MEASURED @ 24 V): 30 mA\nOTHER: \n- SHORT-CIRCUIT \n- REV. POLARITY PROTECTION\n- IP67\n"
+	(text_box "INDUCTIVE PROXIMITY SENSOR\nP/N: DW-AS-509-M12-309\nNOMINAL DIST.: 0-6 mm\nRESPONSE TIME: 1 ms\nIDLE CURRENT (MEASURED @ 24 V): 10 mA\nOTHER: \n- SHORT-CIRCUIT \n- REV. POLARITY PROTECTION\n- IP67\n"
 		(exclude_from_sim no)
 		(at 115.57 132.08 0)
 		(size 53.34 33.02)
@@ -7636,7 +7636,7 @@
 		)
 		(uuid "ee35f44e-3ec7-43f3-a841-d07e6069dfdc")
 	)
-	(hierarchical_label "VOUT_V"
+	(hierarchical_label "V_SENSE"
 		(shape output)
 		(at 72.39 53.34 0)
 		(effects
@@ -7647,7 +7647,7 @@
 		)
 		(uuid "66a495bc-eed7-4024-b9bf-22434698e3b6")
 	)
-	(hierarchical_label "VOUT_I"
+	(hierarchical_label "I_SENSE"
 		(shape output)
 		(at 35.56 25.4 0)
 		(effects
@@ -7667,7 +7667,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "15ab8e9e-f26b-49f7-b8e2-fcae4ca1b140")
 		(property "Reference" "R24"
@@ -7725,7 +7725,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C666876"
+		(property "LCSC" ""
 			(at 31.75 35.56 0)
 			(hide yes)
 			(show_name no)
