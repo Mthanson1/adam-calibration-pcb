@@ -1172,7 +1172,7 @@
 	)
 	(text "SENSOR VOLTAGE MAPPING \n(R_LOAD > 1k)"
 		(exclude_from_sim no)
-		(at 19.05 59.69 0)
+		(at 17.78 58.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1195,9 +1195,9 @@
 		)
 		(uuid "675ad0b6-ed8c-4eaf-811d-08d6fe98b378")
 	)
-	(text "V_IN: 0-10 VDC\nGAIN = @{round(${R_BOT}/(${R_TOP}+${R_BOT}),5)}\nRANGE (NOM.): 0-@{round(${R_BOT}/(${R_TOP}+${R_BOT})*10,5)} V\nP_MAX (±1%): @{round(10^2 / (1.01*(${R_BOT}+${R_TOP})),4)} W\nV_MAX (±1%): @{round(1.01*${R_BOT}/(0.99*${R_TOP}+1.01*${R_BOT})*10,3)} V\nP_MAX (±0.1%): @{round(10^2 / (1.001*(${R_BOT}+${R_TOP})),4)} W\nV_MAX (±0.1%): @{round(1.001*${R_BOT}/(0.999*${R_TOP}+1.05*${R_BOT})*10,3)} V\n"
+	(text "V_IN: 0-10 VDC\nGAIN = @{round(${R_BOT}/(${R_TOP}+${R_BOT}),5)}\nRANGE (NOM.): 0-@{round(${R_BOT}/(${R_TOP}+${R_BOT})*10,5)} V\nP_MAX (±1%): @{round(10^2 / (0.99*(${R_BOT}+${R_TOP}))*1000,2)} mW\nV_MAX (±1%): @{round(1.01*${R_BOT}/(0.99*${R_TOP}+1.01*${R_BOT})*10,3)} V\nP_MAX (±0.1%): @{round(10^2 / (0.999*(${R_BOT}+${R_TOP}))*1000,2)} mW\nV_MAX (±0.1%): @{round(1.001*${R_BOT}/(0.999*${R_TOP}+1.001*${R_BOT})*10,3)} V\n"
 		(exclude_from_sim no)
-		(at 19.05 77.47 0)
+		(at 17.78 78.74 0)
 		(effects
 			(font
 				(size 1.27 1.27)

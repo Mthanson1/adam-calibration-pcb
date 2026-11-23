@@ -973,7 +973,7 @@
 		)
 	)
 	(rectangle
-		(start 16.51 15.24)
+		(start 15.24 15.24)
 		(end 82.55 48.26)
 		(stroke
 			(width 0)
@@ -995,6 +995,17 @@
 			(type none)
 		)
 		(uuid "d08165b1-dbc8-428d-99a6-b1815103e37b")
+	)
+	(text "*NEED 0805 MIN*\n*PACKAGE TO HANDLE FAULT*"
+		(exclude_from_sim no)
+		(at 67.31 44.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+		)
+		(uuid "0929be42-be54-49f6-9637-ec21478af561")
 	)
 	(text "IO PROTECTION CLAMPS"
 		(exclude_from_sim no)
@@ -1021,6 +1032,17 @@
 			(justify left)
 		)
 		(uuid "bfe353fc-3401-45f9-85aa-fef86c120ecc")
+	)
+	(text "*NEED 2512 (1W)*\n*PACKAGE TO HANDLE FAULT*"
+		(exclude_from_sim no)
+		(at 30.48 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+		)
+		(uuid "e3fea5d9-e08f-4df1-b194-076ac6687c8f")
 	)
 	(junction
 		(at 49.53 22.86)
@@ -1472,7 +1494,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "680"
 			(at 30.48 33.782 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2018,7 +2040,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x05"
+		(property "Value" "22-27-2051"
 			(at 109.22 29.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
