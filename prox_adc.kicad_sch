@@ -1875,7 +1875,7 @@
 		)
 		(uuid "63d3508b-3cb7-4ff8-aa96-c51b8edd3a98")
 	)
-	(text_box "R_th = R_TOP || R_BOT = @{round(${R_BOT}*${R_TOP}/(${R_BOT}+${R_TOP})/1000,1)} kΩ\nRs = @{${Rs}/1000} kΩ 0.1%\nCdiff = @{${Cdiff}*10^9} nF\nCcm = @{${Ccm}*10^9} nF, C0G, 1-2%\n\nDIFF. CORNER = 1/(2π*(R_th+2Rs)*Cdiff) = @{round(1/(2*${PI}*((${R_BOT}*${R_TOP}/(${R_BOT}+${R_TOP}))+2*${Rs})*${Cdiff}),0)} Hz\nCM CORNER (+) = 1/(2π*(R_th+Rs)*Ccm) = @{round(1/(2*${PI}*((${R_BOT}*${R_TOP}/(${R_BOT}+${R_TOP}))+${Rs})*${Ccm})/1000,1)} kHz\nCM CORNER (-) = 1/(2π*Rs*Ccm) = @{round(1/(2*${PI}*${Rs}*${Ccm})/1000,1)} kHz\n\nUNEQUAL SOURCE IMPEDANCE (DIVIDER ON + LEG ONLY);\nCM→DIFF CONVERSION IS SHORTED BY Cdiff (Cdiff = 10×Ccm).\n\nATTEN. @ 256 kHz ≈ @{round(256000*6.2832*(${R_TOP}*${R_BOT}/(${R_TOP}+${R_BOT})+2*${Rs})*${Cdiff})}x\n\n"
+	(text_box "R_th = R_TOP || R_BOT = @{round(${R_BOT}*${R_TOP}/(${R_BOT}+${R_TOP})/1000,1)} kΩ\nRs = @{${Rs}/1000} kΩ 0.1%\nCdiff = @{${Cdiff}*10^9} nF\nCcm = @{${Ccm}*10^9} nF, C0G, 1-2%\n\nDIFF. CORNER = 1/(2π*(R_th+2Rs)*Cdiff) = @{round(1/(2*${PI}*((${R_BOT}*${R_TOP}/(${R_BOT}+${R_TOP}))+2*${Rs})*${Cdiff}),0)} Hz\nCM CORNER (+) = 1/(2π*(R_th+Rs)*Ccm) = @{round(1/(2*${PI}*((${R_BOT}*${R_TOP}/(${R_BOT}+${R_TOP}))+${Rs})*${Ccm})/1000,1)} kHz\nCM CORNER (-) = 1/(2π*Rs*Ccm) = @{round(1/(2*${PI}*${Rs}*${Ccm})/1000,1)} kHz\n\nUNEQUAL SOURCE IMPEDANCE (DIVIDER ON + LEG ONLY);\nCM→DIFF CONVERSION IS SHORTED BY Cdiff (Cdiff = 10×Ccm).\n\nATTEN. @ 256 kHz ≈ @{round(256000*2*${PI}*(${R_TOP}*${R_BOT}/(${R_TOP}+${R_BOT})+2*${Rs})*${Cdiff})}x\n\n"
 		(exclude_from_sim no)
 		(at 149.86 21.0462 0)
 		(size 67.31 28.4838)

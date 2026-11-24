@@ -1760,10 +1760,10 @@
 		)
 		(uuid "41ee7dcc-a9de-458e-8a4b-018cc085a710")
 	)
-	(text_box "Rs = @{${Rs}/1000} kΩ 0.1%\nCdiff = @{${Cdiff}*10^9} nF\nCcm = @{${Ccm}*10^9} nF, C0G, 1-2%\n\nDIFF. CORNER = 1/(2π*2Rs*Cdiff) = @{round(1/(2*${PI}*2*${Rs}*${Cdiff}),0)} Hz\nCM CORNER = @{round(1/(2*${PI}*${Rs}*${Ccm})/1000,1)} kHz (~20x DIFF. CORNER)\n\nDESIGNED TO HANDLE ANTI-ALIASING AROUND\nADS1220 MODULATOR FREQ AND BLOCK RF FROM\nCABLE. THE DIFF. CORNER GIVES ~50 dB ATTEN.\n@ 256 kHz MODULATOR"
+	(text_box "Rs = @{${Rs}/1000} kΩ 0.1%\nCdiff = @{${Cdiff}*10^9} nF\nCcm = @{${Ccm}*10^9} nF, C0G, 1-2%\nR_BRDG = ~1kΩ (ESTIMATE)\n\nDIFF. CORNER = 1/(2π*(R_BRDG+2Rs)*Cdiff) = @{round(1/(2*${PI}*(1000+2*${Rs})*${Cdiff}),0)} Hz\nCM CORNER = @{round(1/(2*${PI}*${Rs}*${Ccm})/1000,1)} kHz (~20x DIFF. CORNER)\n\nDESIGNED TO HANDLE ANTI-ALIASING AROUND\nADS1220 MODULATOR FREQ AND BLOCK RF FROM\nCABLE. \n\nATTEN. @ 256 kHz ≈ @{round(256000*(2*${PI})*(1000+2*${Rs})*${Cdiff})}x"
 		(exclude_from_sim no)
-		(at 147.32 22.5323 0)
-		(size 30.48 34.6177)
+		(at 147.32 18.9384 0)
+		(size 31.75 40.7516)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)

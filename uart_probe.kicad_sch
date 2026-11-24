@@ -14,6 +14,129 @@
 		(comment 3 "Notes:")
 	)
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x05"
 			(pin_names
 				(offset 1.016)
@@ -996,6 +1119,18 @@
 		)
 		(uuid "d08165b1-dbc8-428d-99a6-b1815103e37b")
 	)
+	(rectangle
+		(start 125.73 15.24)
+		(end 148.59 33.02)
+		(stroke
+			(width 0)
+			(type dash_dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "edce3765-42cc-4bef-92d9-3da2dd5ef62b")
+	)
 	(text "*NEED 0805 MIN*\n*PACKAGE TO HANDLE FAULT*"
 		(exclude_from_sim no)
 		(at 67.31 44.45 0)
@@ -1006,6 +1141,18 @@
 			)
 		)
 		(uuid "0929be42-be54-49f6-9637-ec21478af561")
+	)
+	(text "DIG.OUT TEST POINTS"
+		(exclude_from_sim no)
+		(at 137.16 31.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "1e831eb8-45cb-41f7-88f2-c6f70cd92bae")
 	)
 	(text "IO PROTECTION CLAMPS"
 		(exclude_from_sim no)
@@ -1137,6 +1284,16 @@
 			(type default)
 		)
 		(uuid "4ad04bf4-c137-41a5-83d3-2b1267079383")
+	)
+	(wire
+		(pts
+			(xy 127 26.67) (xy 138.43 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5492bfbc-fa1a-4526-bd91-9b81b08c9c03")
 	)
 	(wire
 		(pts
@@ -1290,6 +1447,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 20.32) (xy 138.43 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6627672-d938-41f0-9fb1-2bdd80904fd0")
+	)
+	(wire
+		(pts
 			(xy 49.53 40.64) (xy 57.15 40.64)
 		)
 		(stroke
@@ -1307,6 +1474,17 @@
 			(type default)
 		)
 		(uuid "f6b3e71c-17b3-4725-9648-89754b132ba8")
+	)
+	(label "~{OUT0}"
+		(at 127 26.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+			(justify left bottom)
+		)
+		(uuid "1d046bdf-9cac-4d24-86c6-00a18e9dd10e")
 	)
 	(label "UART_RX"
 		(at 91.44 27.94 0)
@@ -1328,6 +1506,17 @@
 			(justify left bottom)
 		)
 		(uuid "611238e1-5c92-4b76-a1a6-142c96505bb6")
+	)
+	(label "~{Z_CONTACT}"
+		(at 127 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+			(justify left bottom)
+		)
+		(uuid "823eb935-000c-4691-910c-cc3b301a8dda")
 	)
 	(label "UART_TX"
 		(at 91.44 25.4 0)
@@ -1394,6 +1583,85 @@
 			(justify right)
 		)
 		(uuid "fb77535c-30ab-44a3-abc5-20e4ece0b678")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 138.43 26.67 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0c838571-f84d-4b34-9c93-f4b6bfe8345d")
+		(property "Reference" "TP6"
+			(at 143.51 26.67 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 143.51 27.94 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 138.43 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 138.43 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "46aa1317-3481-48b4-a056-1181984cc790")
+		)
+		(instances
+			(project "Adam_Calibration"
+				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/0ee76a58-5905-43e9-a43a-ac7fd6e43632"
+					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2013,6 +2281,85 @@
 				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/0ee76a58-5905-43e9-a43a-ac7fd6e43632"
 					(reference "D13")
 					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 138.43 20.32 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a36a2a89-7aa7-4bdf-885d-4593e021190d")
+		(property "Reference" "TP5"
+			(at 143.51 20.32 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 143.51 21.59 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 138.43 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 138.43 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "968068f3-8021-4b0d-af77-a17ccf43a5ed")
+		)
+		(instances
+			(project "Adam_Calibration"
+				(path "/01121b40-7bd0-4bf5-ba88-6000dd309313/0ee76a58-5905-43e9-a43a-ac7fd6e43632"
+					(reference "TP5")
+					(unit 1)
 				)
 			)
 		)
